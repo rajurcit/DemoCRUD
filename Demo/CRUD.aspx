@@ -7,35 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.3.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"  />
-    <script>        
-      $(document).ready(function () {
-           var rows;
-        var coldata;
-        $('#txtSearch').keyup(function () {
-            $('#<%=Repeater1.ClientID%> tbody tr').hide();
-            debugger    
-            var data = $('#txtSearch').val();
-            var len = data.length;
-            if (len > 0) {
-                $('#<%=Repeater1.ClientID%>').find('tbody tr').each(function () {
-                    coldata = $(this).children().eq(1);
-                    console.log(coldata);
-                    var temp = coldata.text().toUpperCase().indexOf(data.toUpperCase());
-                    console.log(temp);
-                    if (temp===0) {
-                       alert("show");
-                       console.log( $(this));
-                        $(this).show();
-                    }
-                });
-            } else {
-            $('#<%=Repeater1.ClientID%> tbody tr').hide();
-                alert("hel;lo");
-            }
-
-        });
-        });
-    </script>
+    
 </head>
 <body>
     <form id="form1" runat="server">
